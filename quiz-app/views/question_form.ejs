@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= question ? 'Edit' : 'Tambah' %> Soal | 🧩 The Riddler </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<%- include('partials/navbar', { activePage: 'questions' }) %>
+
+<main class="main-content">
+  <div class="container py-4">
+    <div class="page-header d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="page-title">
+          <i class="bi bi-<%= question ? 'pencil' : 'plus-circle' %>-fill me-2"></i>
+          <%= question ? 'Edit Soal' : 'Tambah Soal Baru' %>
+        </h2>
+        <p class="page-subtitle">Isi semua field yang diperlukan</p>
+      </div>
+      <a href="/questions" class="btn btn-back">
+        <i class="bi bi-arrow-left me-2"></i>Kembali
+      </a>
+    </div>
+
+    <div class="form-card">
+      <form id="questionForm" action="<%= action %>" method="POST">
+        <!-- Pertanyaan -->
+        <div class="mb-4">
+          <label class="form-label-custom">Pertanyaan <span class="text-danger">*</span></label>
+          <textarea name="question_text" id="question_text" class="form-control form-control-custom" rows="3" required><%= question ? question.question_text : '' %></textarea>
+        </div>
+
+        <!-- Pilihan Jawaban -->
+        <div class="row g-3 mb-4">
+          <div class="col-12">
+            <label class="form-label-custom">Pilihan Jawaban <span class="text-danger">*</span></label>
+          </div>
+          <% ['a','b','c','d'].forEach(function(opt) { %>
+          <div class="col-md-6">
+            <div class="option-input-wrapper">
+              <span class="option-label option-<%= opt %>"><%= opt.toUpperCase() %></span>
+              <input type="text" name="option_<%= opt %>" id="option_<%= opt %>"
+                class="form-control form-control-custom option-input"
+                placeholder="Pilihan <%= opt.toUpperCase() %>"
+                value="<%= question ? question['option_' + opt] : '' %>"
+                required>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+
+        <!-- Jawaban Benar & Tingkat Kesulitan -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-4">
+            <label class="form-label-custom">Jawaban Benar <span class="text-danger">*</span></label>
+            <select name="correct_answer" id="correct_answer" class="form-select form-control-custom" required>
+              <option value="">-- Pilih --</option>
+              <% ['A','B','C','D'].forEach(function(opt) { %>
+              <option value="<%= opt %>" <%= question && question.correct_answer === opt ? 'selected' : '' %>><%= opt %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label-custom">Tingkat Kesulitan <span class="text-danger">*</span></label>
+            <select name="difficulty" id="difficulty" class="form-select form-control-custom" required>
+              <option value="easy" <%= question && question.difficulty === 'easy' ? 'selected' : '' %>>Mudah</option>
+              <option value="medium" <%= !question || question.difficulty === 'medium' ? 'selected' : '' %>>Sedang</option>
+              <option value="hard" <%= question && question.difficulty === 'hard' ? 'selected' : '' %>>Sulit</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label-custom">Level Hadiah (1-10)</label>
+            <input type="number" name="prize_level" id="prize_level"
+              class="form-control form-control-custom"
+              min="1" max="10"
+              value="<%= question ? question.prize_level : 1 %>">
+          </div>
+        </div>
+
+        <div class="d-flex gap-3">
+          <button type="submit" class="btn btn-save">
+            <i class="bi bi-check-circle-fill me-2"></i><%= question ? 'Simpan Perubahan' : 'Tambah Soal' %>
+          </button>
+          <a href="/questions" class="btn btn-cancel">
+            <i class="bi bi-x-circle-fill me-2"></i>Batal
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="/js/main.js"></script>
+<script>
+$(document).ready(function() {
+  $('#questionForm').validate({
+    rules: {
+      question_text: { required: true, minlength: 10 },
+      option_a: { required: true },
+      option_b: { required: true },
+      option_c: { required: true },
+      option_d: { required: true },
+      correct_answer: { required: true },
+      difficulty: { required: true }
+    },
+    messages: {
+      question_text: { required: 'Pertanyaan wajib diisi!', minlength: 'Minimal 10 karakter' },
+      option_a: { required: 'Pilihan A wajib diisi!' },
+      option_b: { required: 'Pilihan B wajib diisi!' },
+      option_c: { required: 'Pilihan C wajib diisi!' },
+      option_d: { required: 'Pilihan D wajib diisi!' },
+      correct_answer: { required: 'Pilih jawaban yang benar!' },
+      difficulty: { required: 'Pilih tingkat kesulitan!' }
+    },
+    errorClass: 'is-invalid',
+    validClass: 'is-valid',
+    errorElement: 'div',
+    errorPlacement: function(error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.col-md-4, .col-md-6, .mb-4').append(error);
+    }
+  });
+});
+</script>
+</body>
+</html>
