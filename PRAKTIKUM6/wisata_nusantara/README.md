@@ -6,7 +6,12 @@ Aplikasi Flutter bertema **wisata Indonesia** yang menampilkan berbagai widget U
 
 ## 📱 Screenshot
 
-> *(Tambahkan screenshot hasil emulator di sini setelah menjalankan aplikasi)*
+<img width="960" height="540" alt="image_2026-05-15_20-45-46" src="https://github.com/user-attachments/assets/5c96c893-31e4-4fb7-9676-a23ae5a9f8d2" />
+<img width="960" height="540" alt="image_2026-05-15_20-46-06" src="https://github.com/user-attachments/assets/c2c465a8-fc8f-47ce-a843-d44ba30d5b43" />
+<img width="960" height="540" alt="image_2026-05-15_20-46-20" src="https://github.com/user-attachments/assets/e019587d-6557-4aba-96a6-2ce06dbda915" />
+<img width="960" height="540" alt="image_2026-05-15_20-46-32" src="https://github.com/user-attachments/assets/35cd9519-bcd9-4898-9038-5ba19353c926" />
+
+
 
 ---
 
