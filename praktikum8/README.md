@@ -104,3 +104,9 @@ flutter run
 ```
 
 > Pastikan emulator Android sudah berjalan atau perangkat sudah terhubung via USB.
+
+## Hasil
+<img width="1080" height="2400" alt="photo_2026-05-27_20-48-31" src="https://github.com/user-attachments/assets/3fc48192-5a06-4918-80cf-67e8b31a979b" />
+<img width="1080" height="2400" alt="photo_2026-05-27_20-48-29" src="https://github.com/user-attachments/assets/0afb4e31-30c4-464b-a20d-81b2d1b909c1" />
+<img width="1080" height="2400" alt="photo_2026-05-27_20-48-26" src="https://github.com/user-attachments/assets/2ad122fe-563d-42bc-a283-cb17e274f7a9" />
+
