@@ -155,6 +155,8 @@ void main() async {
 Menampilkan 3 tugas yang sudah ditambahkan (Gym, Study, Sleep) beserta counter jumlah tugas pending.
 
 ![Daftar Tugas](screenshots/task_list.jpg)
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/2e0a26a0-e3c1-4a09-9738-51a8983cd06c" />
+
 
 ---
 
@@ -162,6 +164,8 @@ Menampilkan 3 tugas yang sudah ditambahkan (Gym, Study, Sleep) beserta counter j
 Dialog muncul saat tombol **+** (FAB) ditekan. User dapat mengetikkan nama tugas lalu menekan tombol **Add**.
 
 ![Dialog Tambah Tugas](screenshots/add_task_dialog.jpg)
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/9c3b38a3-9c8a-4649-b7f6-382f77ffa0ba" />
+
 
 ---
 
@@ -169,6 +173,8 @@ Dialog muncul saat tombol **+** (FAB) ditekan. User dapat mengetikkan nama tugas
 Dialog konfirmasi muncul saat tombol delete di AppBar ditekan untuk mencegah penghapusan tidak sengaja.
 
 ![Dialog Hapus Semua](screenshots/delete_all_dialog.jpg)
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/baeb9ebe-f3c8-4132-ae5b-6a7e52600a70" />
+
 
 ---
 
@@ -176,6 +182,8 @@ Dialog konfirmasi muncul saat tombol delete di AppBar ditekan untuk mencegah pen
 Tampilan setelah semua tugas dihapus, menampilkan pesan "No tasks yet!" dengan ikon centang.
 
 ![Empty State](screenshots/empty_state.jpg)
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/6fe48f69-3029-473b-963e-580621dce062" />
+
 
 ---
 
@@ -183,6 +191,8 @@ Tampilan setelah semua tugas dihapus, menampilkan pesan "No tasks yet!" dengan i
 Notifikasi push dari Firebase Console berhasil diterima di perangkat Android saat aplikasi dalam kondisi background.
 
 ![Notifikasi FCM](screenshots/fcm_notification.jpg)
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/2d6827c2-2da8-4d9b-a3d3-e6da51e5ac33" />
+
 
 ---
 
