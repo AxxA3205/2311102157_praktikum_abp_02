@@ -1,0 +1,60 @@
+import '../models/product.dart';
+
+final List<Product> productList = [
+  const Product(
+    id: '1',
+    name: 'Sepatu Lari Nike',
+    description: 'Sepatu lari ringan dengan teknologi Air Max untuk kenyamanan optimal saat berlari.',
+    price: 1250000,
+    emoji: '👟',
+    category: 'Footwear',
+  ),
+  const Product(
+    id: '2',
+    name: 'Raket Badminton Yonex',
+    description: 'Raket badminton profesional dengan frame carbon fiber, ringan dan kuat.',
+    price: 850000,
+    emoji: '🏸',
+    category: 'Racket Sport',
+  ),
+  const Product(
+    id: '3',
+    name: 'Dumbbell Set 20kg',
+    description: 'Set dumbbell adjustable 2x10kg, cocok untuk latihan kekuatan di rumah.',
+    price: 650000,
+    emoji: '🏋️',
+    category: 'Gym Equipment',
+  ),
+  const Product(
+    id: '4',
+    name: 'Bola Sepak Adidas',
+    description: 'Bola sepak ukuran 5 standar FIFA, cocok untuk latihan dan pertandingan.',
+    price: 350000,
+    emoji: '⚽',
+    category: 'Ball Sport',
+  ),
+  const Product(
+    id: '5',
+    name: 'Matras Yoga Premium',
+    description: 'Matras yoga anti-slip 6mm, bahan TPE ramah lingkungan, tersedia berbagai warna.',
+    price: 420000,
+    emoji: '🧘',
+    category: 'Yoga & Pilates',
+  ),
+  const Product(
+    id: '6',
+    name: 'Helm Sepeda MTB',
+    description: 'Helm sepeda mountain bike dengan ventilasi optimal dan desain aerodinamis.',
+    price: 580000,
+    emoji: '🚴',
+    category: 'Cycling',
+  ),
+  const Product(
+    id: '7',
+    name: 'Tali Skipping Speed',
+    description: 'Tali skipping dengan bearing stainless steel untuk gerakan cepat dan presisi.',
+    price: 120000,
+    emoji: '🪢',
+    category: 'Cardio',
+  ),
+];
