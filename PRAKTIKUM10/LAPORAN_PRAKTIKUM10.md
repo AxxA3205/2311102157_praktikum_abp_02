@@ -1,9 +1,9 @@
 # Laporan Praktikum 10
 ## Implementasi State Management dengan BLoC pada Aplikasi Flutter
 
-**Nama:** [Isi Nama Kamu]  
-**NIM:** [Isi NIM Kamu]  
-**Mata Kuliah:** Alat Bantu Pemrograman (ABP)  
+**Nama:** Mahija Danadyaksa Sadtomo
+**NIM:** 2311102157
+**Mata Kuliah:** ABP
 **Tanggal:** 18 Juni 2026  
 
 ---
@@ -137,33 +137,32 @@ context.read<CartBloc>().add(RemoveFromCartEvent(product));
 
 ### Gambar 1 — Tampilan Daftar Produk (Awal)
 > Halaman utama menampilkan 7 produk alat olahraga. Setiap produk memiliki emoji, nama, deskripsi, harga, dan tombol **"Tambah"**. Badge keranjang di pojok kanan atas belum muncul karena keranjang masih kosong.
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/d4648406-08a0-47e7-837f-2203f82bd56f" />
 
-*(Tempel screenshot 1 di sini)*
 
 ### Gambar 2 — Badge Keranjang Real-time (4 Item)
 > Setelah menambahkan Sepatu Lari Nike (×1) dan Raket Badminton Yonex (×3), badge AppBar menampilkan angka **4** secara real-time. Produk yang sudah ditambahkan menampilkan kontrol **−/qty/+** dan label `x1`, `x3`. Teks **"4 item di keranjang"** muncul di summary bar.
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/d3c5a9b4-3df3-4c71-9cc3-34e4c502136c" />
 
-*(Tempel screenshot 2 di sini)*
 
 ### Gambar 3 — Perubahan State Real-time (2 Item)
 > Setelah mengurangi Raket Badminton Yonex dari 3 menjadi 1, badge langsung berubah menjadi **2**. Membuktikan `BlocBuilder` merespons perubahan `CartState` secara *real-time* tanpa reload halaman.
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/d9046588-dd5c-486d-bf34-3ae87158f95b" />
 
-*(Tempel screenshot 3 di sini)*
 
 ### Gambar 4 — Halaman Keranjang
 > Halaman keranjang menampilkan produk dengan kuantitas, harga satuan, dan **subtotal**. Bagian bawah menampilkan **Total Item (4)** dan **Total Harga (Rp 3.800.000)** yang diperbarui otomatis oleh `BlocBuilder`.
-
-*(Tempel screenshot 4 di sini)*
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/6ccb05b0-3dc1-4621-b839-80259ab0996b" />
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/bd9a5e32-8abe-495b-9c53-ab0877796ae2" />
 
 ### Gambar 5 — Dialog Checkout Berhasil
 > Dialog konfirmasi muncul menampilkan total item dan harga. Setelah "Selesai" ditekan, `ClearCartEvent` dikirim ke `CartBloc` dan keranjang dikosongkan.
-
-*(Tempel screenshot 5 di sini)*
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/64553832-0fc9-40c6-a7db-ae03b2bbceef" />
 
 ### Gambar 6 — Keranjang Kosong (0 Item)
 > Setelah checkout, halaman keranjang menampilkan state kosong **(0 item)** — hasil dari `ClearCartEvent` yang memicu `emit(const CartState())` di `CartBloc`.
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/93da4431-ccda-4500-8d10-982d0fee6b8d" />
 
-*(Tempel screenshot 6 di sini)*
 
 ---
 
